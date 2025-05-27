@@ -1,4 +1,4 @@
-export {}; // 👈 Required even if it’s empty
+export {}; //  Required even if it’s empty
 
 // This file defines a reusable TypeScript interface for Client data
 
