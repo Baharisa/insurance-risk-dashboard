@@ -12,7 +12,7 @@ const Upload: React.FC = () => {
   // [React State] Whether the message is an error
   const [error, setError] = useState<boolean>(false); // Used to control color/styling
 
-  // 🔹 Runs when user selects a file
+  //  Runs when user selects a file
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0]; // Optional chaining (safe access)
     setMessage('');
@@ -23,7 +23,7 @@ const Upload: React.FC = () => {
     }
   };
 
-  // 🔹 Called when user clicks "Upload"
+  //  Called when user clicks "Upload"
   const handleUpload = () => {
     if (!file) {
       setMessage('No file selected.'); // Error if no file
@@ -33,14 +33,14 @@ const Upload: React.FC = () => {
 
     // Normally: upload to server here using fetch or axios
 
-    setMessage(`✅ Uploaded "${file.name}" successfully!`); // Show success
+    setMessage(` Uploaded "${file.name}" successfully!`); // Show success
     setError(false);
     setFile(null); // Clear file (optional reset)
   };
 
   return (
     <div className="max-w-md mx-auto mt-12 p-6 bg-white rounded shadow">
-      {/* 📦 Container styled with Tailwind CSS
+      {/*  Container styled with Tailwind CSS
           max-w-md = max width,
           mx-auto = center horizontally,
           mt-12 = margin top,
@@ -54,7 +54,7 @@ const Upload: React.FC = () => {
         Upload CSV File
       </h2>
 
-      {/* ✅ Show message if exists (error or success) */}
+      {/*  Show message if exists (error or success) */}
       {message && (
         <p
           className={`text-sm mb-4 ${
@@ -65,7 +65,7 @@ const Upload: React.FC = () => {
         </p>
       )}
 
-      {/* 📂 File input */}
+      {/*  File input */}
       <input
         type="file"
         accept=".csv"
@@ -73,7 +73,7 @@ const Upload: React.FC = () => {
         className="w-full text-sm text-gray-700 border border-gray-300 rounded p-2 mb-4"
       />
 
-      {/* 🚀 Upload button */}
+      {/*  Upload button */}
       <button
         onClick={handleUpload}
         className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
